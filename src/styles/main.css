@@ -10,14 +10,18 @@
 /* Importar fuentes */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Roboto+Mono:wght@400;500&display=swap');
 
-/* Variables CSS personalizadas */
+/* Variables CSS personalizadas - Color corporativo Semper Fi */
 @layer base {
   :root {
-    --color-primary: #10b981; /* verde */
-    --color-secondary: #3b82f6; /* azul */
-    --color-accent: #f59e0b; /* naranja */
-    --color-dark: #080808;
-    --color-light: #f9f8f6;
+    --color-primary: #2ebaf8; /* Azul Semper Fi - Color corporativo */
+    --color-primary-light: #5dcbfb; /* Azul claro */
+    --color-primary-dark: #1a9ad6; /* Azul oscuro */
+    --color-secondary: #0d94c9; /* Azul secundario */
+    --color-accent: #1ebde8; /* Azul acento */
+    --color-dark: #0a1628; /* Azul muy oscuro */
+    --color-light: #f0f9ff; /* Azul muy claro */
+    --color-gradient-start: #2ebaf8;
+    --color-gradient-end: #1a7cc2;
   }
 }
 
@@ -51,13 +55,74 @@ html {
 
   .glass-effect {
     backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(46, 186, 248, 0.1);
+    border: 1px solid rgba(46, 186, 248, 0.2);
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    background: linear-gradient(135deg, #2ebaf8, #1a9ad6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+  
+  .bg-gradient-semperfi {
+    background: linear-gradient(135deg, #2ebaf8 0%, #1a9ad6 50%, #0d94c9 100%);
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .shadow-semperfi {
+    box-shadow: 0 10px 40px rgba(46, 186, 248, 0.3);
+  }
+  
+  .border-gradient-semperfi {
+    border-image: linear-gradient(135deg, #2ebaf8, #1a9ad6) 1;
+  }
+}
+
+/* Estilos adicionales para mejorar la experiencia */
+.feature-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(46, 186, 248, 0.4);
+}
+
+/* Botones con estilo corporativo */
+.btn-semperfi {
+  background: linear-gradient(135deg, #2ebaf8 0%, #1a9ad6 100%);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.btn-semperfi:hover {
+  background: white;
+  color: #2ebaf8;
+  border-color: #2ebaf8;
+  transform: scale(1.05);
+}
+
+.btn-semperfi-outline {
+  background: transparent;
+  color: #2ebaf8;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid #2ebaf8;
+}
+
+.btn-semperfi-outline:hover {
+  background: #2ebaf8;
+  color: white;
+  transform: scale(1.05);
 }

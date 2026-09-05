@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Assets - Semper Fi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --color-primary: #2ebaf8;
+            --color-primary-dark: #1a9ad6;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+        
+        .asset-card {
+            transition: all 0.3s ease;
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(46, 186, 248, 0.1);
+        }
+        
+        .asset-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(46, 186, 248, 0.3);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-8">
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <img src="/Assets/Logo_Semper_Fi_transparente.png" alt="Semper Fi" class="w-24 h-24 mx-auto mb-6 drop-shadow-2xl">
+            <h1 class="text-6xl font-bold text-gray-900 mb-4">Galería de Assets</h1>
+            <p class="text-xl text-gray-600">Todos los recursos visuales de Semper Fi</p>
+        </div>
+        
+        <!-- Logos Section -->
+        <section class="mb-20">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 flex items-center gap-4">
+                <span class="w-12 h-1 bg-[#2ebaf8]"></span>
+                Logos y Branding
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Logo Principal -->
+                <div class="asset-card p-8">
+                    <div class="bg-gradient-to-br from-[#2ebaf8] to-[#1a9ad6] rounded-lg p-8 mb-4 flex items-center justify-center">
+                        <img src="/Assets/Logo_Semper_Fi_transparente.png" alt="Logo Transparente" class="h-32 object-contain">
+                    </div>
+                    <h3 class="font-bold text-lg">Logo Transparente</h3>
+                    <p class="text-sm text-gray-600">Logo principal sin fondo</p>
+                </div>
+                
+                <!-- Logo con Fondo Degradado 1 -->
+                <div class="asset-card p-8">
+                    <div class="rounded-lg overflow-hidden mb-4">
+                        <img src="/Assets/1_1_Logo_Semper_Fi_Con_Fondo_Degradado.png" alt="Logo con Fondo 1" class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="font-bold text-lg">Logo con Fondo V1</h3>
+                    <p class="text-sm text-gray-600">Primera versión con degradado</p>
+                </div>
+                
+                <!-- Logo con Fondo Degradado 2 -->
+                <div class="asset-card p-8">
+                    <div class="rounded-lg overflow-hidden mb-4">
+                        <img src="/Assets/Logo_Semper_Fi_Con_Fondo_Degradado_2.png" alt="Logo con Fondo 2" class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="font-bold text-lg">Logo con Fondo V2</h3>
+                    <p class="text-sm text-gray-600">Segunda versión con degradado</p>
+                </div>
+                
+                <!-- Logo con Fondo Degradado 3 -->
+                <div class="asset-card p-8">
+                    <div class="rounded-lg overflow-hidden mb-4">
+                        <img src="/Assets/Logo_Semper_Fi_Con_Fondo_Degradado_3.png" alt="Logo con Fondo 3" class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="font-bold text-lg">Logo con Fondo V3</h3>
+                    <p class="text-sm text-gray-600">Tercera versión con degradado</p>
+                </div>
+                
+                <!-- Logo con Fondo Degradado 4 -->
+                <div class="asset-card p-8">
+                    <div class="rounded-lg overflow-hidden mb-4">
+                        <img src="/Assets/Logo_Semper_Fi_Con_Fondo_Degradado_4.png" alt="Logo con Fondo 4" class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="font-bold text-lg">Logo con Fondo V4</h3>
+                    <p class="text-sm text-gray-600">Cuarta versión con degradado</p>
+                </div>
+                
+                <!-- Logo con Fondo Degradado 5 -->
+                <div class="asset-card p-8">
+                    <div class="rounded-lg overflow-hidden mb-4">
+                        <img src="/Assets/Logo_Semper_Fi_Con_Fondo_Degradado_5.png" alt="Logo con Fondo 5" class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="font-bold text-lg">Logo con Fondo V5</h3>
+                    <p class="text-sm text-gray-600">Quinta versión con degradado</p>
+                </div>
+                
+                <!-- Fondo Azul Degradado -->
+                <div class="asset-card p-8">
+                    <div class="rounded-lg overflow-hidden mb-4">
+                        <img src="/Assets/Fondo_Azul_Degradado.png" alt="Fondo Degradado" class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="font-bold text-lg">Fondo Degradado</h3>
+                    <p class="text-sm text-gray-600">Fondo azul corporativo</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Iconos de Categorías -->
+        <section class="mb-20">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 flex items-center gap-4">
+                <span class="w-12 h-1 bg-[#2ebaf8]"></span>
+                Iconos de Categorías
+            </h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="asset-card p-6">
+                    <div class="bg-gradient-to-br from-[#2ebaf8] to-[#1a9ad6] rounded-lg p-6 mb-4 flex items-center justify-center">
+                        <img src="/Assets/Iconos_Categorias_Semper_Fi/2.png" alt="Icono 2" class="h-24 object-contain">
+                    </div>
+                    <h3 class="font-bold text-center">Icono 2</h3>
+                </div>
+                
+                <div class="asset-card p-6">
+                    <div class="bg-gradient-to-br from-[#1a9ad6] to-[#0d94c9] rounded-lg p-6 mb-4 flex items-center justify-center">
+                        <img src="/Assets/Iconos_Categorias_Semper_Fi/3.png" alt="Icono 3" class="h-24 object-contain">
+                    </div>
+                    <h3 class="font-bold text-center">Icono 3</h3>
+                </div>
+                
+                <div class="asset-card p-6">
+                    <div class="bg-gradient-to-br from-[#2ebaf8] to-[#1a9ad6] rounded-lg p-6 mb-4 flex items-center justify-center">
+                        <img src="/Assets/Iconos_Categorias_Semper_Fi/4.png" alt="Icono 4" class="h-24 object-contain">
+                    </div>
+                    <h3 class="font-bold text-center">Icono 4</h3>
+                </div>
+                
+                <div class="asset-card p-6">
+                    <div class="bg-gradient-to-br from-[#5dcbfb] to-[#2ebaf8] rounded-lg p-6 mb-4 flex items-center justify-center">
+                        <img src="/Assets/Iconos_Categorias_Semper_Fi/5.png" alt="Icono 5" class="h-24 object-contain">
+                    </div>
+                    <h3 class="font-bold text-center">Icono 5</h3>
+                </div>
+                
+                <div class="asset-card p-6">
+                    <div class="bg-gradient-to-br from-[#0d94c9] to-[#0a7ab5] rounded-lg p-6 mb-4 flex items-center justify-center">
+                        <img src="/Assets/Iconos_Categorias_Semper_Fi/6.png" alt="Icono 6" class="h-24 object-contain">
+                    </div>
+                    <h3 class="font-bold text-center">Icono 6</h3>
+                </div>
+                
+                <div class="asset-card p-6">
+                    <div class="bg-gradient-to-br from-[#2ebaf8] to-[#1a9ad6] rounded-lg p-6 mb-4 flex items-center justify-center">
+                        <img src="/Assets/Iconos_Categorias_Semper_Fi/7.png" alt="Icono 7" class="h-24 object-contain">
+                    </div>
+                    <h3 class="font-bold text-center">Icono 7</h3>
+                </div>
+                
+                <div class="asset-card p-6">
+                    <div class="bg-gradient-to-br from-[#1a9ad6] to-[#0d94c9] rounded-lg p-6 mb-4 flex items-center justify-center">
+                        <img src="/Assets/Iconos_Categorias_Semper_Fi/8.png" alt="Icono 8" class="h-24 object-contain">
+                    </div>
+                    <h3 class="font-bold text-center">Icono 8</h3>
+                </div>
+                
+                <div class="asset-card p-6">
+                    <div class="bg-gradient-to-br from-[#5dcbfb] to-[#2ebaf8] rounded-lg p-6 mb-4 flex items-center justify-center">
+                        <img src="/Assets/Iconos_Categorias_Semper_Fi/9.png" alt="Icono 9" class="h-24 object-contain">
+                    </div>
+                    <h3 class="font-bold text-center">Icono 9</h3>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Videos de Pantallas de Carga -->
+        <section class="mb-20">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 flex items-center gap-4">
+                <span class="w-12 h-1 bg-[#2ebaf8]"></span>
+                Videos de Carga y Animaciones
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Video Principal -->
+                <div class="asset-card overflow-hidden">
+                    <div class="video-container bg-black">
+                        <video controls poster="/Assets/1_1_Logo_Semper_Fi_Con_Fondo_Degradado.png">
+                            <source src="/Assets/Video_2_Pantalla_de_Carga_SEMPER_FI.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2">Video Principal de Carga</h3>
+                        <p class="text-sm text-gray-600">Animación de pantalla de carga versión 2</p>
+                    </div>
+                </div>
+                
+                <!-- Pantalla Carga 1 -->
+                <div class="asset-card overflow-hidden">
+                    <div class="video-container bg-black">
+                        <video controls poster="/Assets/Logo_Semper_Fi_transparente.png">
+                            <source src="/Assets/Pantalla_de_Carga_SEMPER_FI.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2">Pantalla de Carga V1</h3>
+                        <p class="text-sm text-gray-600">Primera versión animación</p>
+                    </div>
+                </div>
+                
+                <!-- Pantalla Carga 2 -->
+                <div class="asset-card overflow-hidden">
+                    <div class="video-container bg-black">
+                        <video controls>
+                            <source src="/Assets/Pantalla_de_Carga_SEMPER_FI_1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2">Pantalla de Carga V1.1</h3>
+                        <p class="text-sm text-gray-600">Variante 1 de animación</p>
+                    </div>
+                </div>
+                
+                <!-- Pantalla Carga 3 -->
+                <div class="asset-card overflow-hidden">
+                    <div class="video-container bg-black">
+                        <video controls>
+                            <source src="/Assets/Pantalla_de_Carga_SEMPER_FI_2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2">Pantalla de Carga V2</h3>
+                        <p class="text-sm text-gray-600">Segunda versión animación</p>
+                    </div>
+                </div>
+                
+                <!-- Pantalla Carga 4 -->
+                <div class="asset-card overflow-hidden">
+                    <div class="video-container bg-black">
+                        <video controls>
+                            <source src="/Assets/Pantalla_de_Carga_SEMPER_FI_3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2">Pantalla de Carga V3</h3>
+                        <p class="text-sm text-gray-600">Tercera versión animación</p>
+                    </div>
+                </div>
+                
+                <!-- Pantalla Carga 5 -->
+                <div class="asset-card overflow-hidden">
+                    <div class="video-container bg-black">
+                        <video controls>
+                            <source src="/Assets/Pantalla_de_Carga_SEMPER_FI_4.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2">Pantalla de Carga V4</h3>
+                        <p class="text-sm text-gray-600">Cuarta versión animación</p>
+                    </div>
+                </div>
+                
+                <!-- Pantalla Carga 6 -->
+                <div class="asset-card overflow-hidden">
+                    <div class="video-container bg-black">
+                        <video controls>
+                            <source src="/Assets/Pantalla_de_Carga_SEMPER_FI_5.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2">Pantalla de Carga V5</h3>
+                        <p class="text-sm text-gray-600">Quinta versión animación</p>
+                    </div>
+                </div>
+                
+                <!-- Pantalla Carga 7 -->
+                <div class="asset-card overflow-hidden">
+                    <div class="video-container bg-black">
+                        <video controls>
+                            <source src="/Assets/Pantalla_de_Carga_SEMPER_FI_6.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2">Pantalla de Carga V6</h3>
+                        <p class="text-sm text-gray-600">Sexta versión animación</p>
+                    </div>
+                </div>
+                
+                <!-- Intro Video -->
+                <div class="asset-card overflow-hidden">
+                    <div class="video-container bg-black">
+                        <video controls>
+                            <source src="/Assets/Intro.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2">Video Intro</h3>
+                        <p class="text-sm text-gray-600">Animación de introducción</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="text-center py-12 border-t-4 border-[#2ebaf8] mt-20">
+            <img src="/Assets/Logo_Semper_Fi_transparente.png" alt="Semper Fi" class="w-16 h-16 mx-auto mb-4">
+            <p class="text-gray-600 font-semibold">Semper Fi © 2026</p>
+            <p class="text-sm text-gray-500">Ecosistema Digital Inteligente para Popayán</p>
+            <p class="text-xs text-[#2ebaf8] mt-4 font-mono">Color Corporativo: #2ebaf8</p>
+        </footer>
+    </div>
+</body>
+</html>
