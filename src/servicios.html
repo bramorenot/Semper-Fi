@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Servicios — Semper Fi</title>
+  
+  <!-- Favicon - Logo de Semper Fi con fondo degradado -->
+  <link rel="icon" type="image/png" href="/Assets/1_1_Logo_Semper_Fi_Con_Fondo_Degradado.png" />
+  <link rel="apple-touch-icon" href="/Assets/1_1_Logo_Semper_Fi_Con_Fondo_Degradado.png" />
+  
   <link rel="stylesheet" href="https://unpkg.com/lenis@1/dist/lenis.css"/>
   <script type="module" src="/main.js"></script>
 </head>
@@ -48,22 +53,7 @@
         </style>
         
         <!-- Header -->
-        <header class="fixed top-4 left-4 right-4 w-auto z-[100] flex items-center justify-between px-10 py-6 is-light" id="main-nav">
-            <div class="flex items-center gap-12">
-                <a class="flex items-center gap-2 group" href="/index.html">
-                    <svg class="w-6 h-6 text-black transition-colors duration-300 logo-svg" fill="currentColor" viewbox="0 0 24 24">
-                        <path d="M12 2L13.8 8.8L20.8 10.6L14 12.4L12.2 19.2L10.4 12.4L3.6 10.6L10.6 8.8L12 2Z"></path>
-                    </svg>
-                    <span class="text-xl font-semibold tracking-tight text-black transition-colors duration-300 logo-text">Semper Fi</span>
-                </a>
-                <nav class="hidden lg:flex items-center gap-8">
-                    <a class="text-sm font-medium text-black/80 hover:text-black nav-link-item" href="/sobre-nosotros.html">Sobre nosotros</a>
-                    <a class="text-sm font-medium text-black/80 hover:text-black nav-link-item" href="/domicilios.html">Domicilios</a>
-                    <a class="text-sm font-medium text-black/80 hover:text-black nav-link-item" href="/software.html">Software</a>
-                    <a class="text-sm font-medium text-black/80 hover:text-black nav-link-item" href="/servicios.html">Servicios</a>
-                </nav>
-            </div>
-        </header>
+        <app-header></app-header>
 
         <!-- Hero Section -->
         <section class="relative w-full min-h-screen bg-gradient-to-br from-[#f9f8f6] via-[#f0efed] to-[#e8e7e5] pt-32 pb-20 px-10 flex items-center">
@@ -321,17 +311,7 @@
         </section>
 
         <!-- Footer -->
-        <footer class="w-full bg-[#f9f8f6] py-20 px-10 border-t border-black/5">
-            <div class="max-w-7xl mx-auto text-center">
-                <div class="flex items-center justify-center gap-3 mb-8">
-                    <svg class="w-8 h-8 text-black" fill="currentColor" viewbox="0 0 24 24">
-                        <path d="M12 2L13.8 8.8L20.8 10.6L14 12.4L12.2 19.2L10.4 12.4L3.6 10.6L10.6 8.8L12 2Z"></path>
-                    </svg>
-                    <span class="text-3xl font-semibold tracking-tight">Semper Fi</span>
-                </div>
-                <p class="text-[#70706f] text-sm">© 2026 Semper Fi. Popayán, Colombia.</p>
-            </div>
-        </footer>
+        <app-footer></app-footer>
     </div>
 </div>
 

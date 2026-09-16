@@ -1,9 +1,14 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Semper Fi — Ecosistema Digital Inteligente para Popayán</title>
+  
+  <!-- Favicon - Logo de Semper Fi con fondo degradado -->
+  <link rel="icon" type="image/png" href="/Assets/1_1_Logo_Semper_Fi_Con_Fondo_Degradado.png" />
+  <link rel="apple-touch-icon" href="/Assets/1_1_Logo_Semper_Fi_Con_Fondo_Degradado.png" />
+  
   <link rel="stylesheet" href="https://unpkg.com/lenis@1/dist/lenis.css"/>
   <script type="module" src="/main.js"></script>
 </head>
@@ -106,99 +111,116 @@
 
       /* Custom animations classes */
       .reveal-up { transform: translateY(40px); opacity: 0; }
+      
+      /* Hide all buttons except header buttons */
+      .btn-pill-light:not(#main-nav .btn-pill-light),
+      .btn-pill-dark:not(#main-nav .btn-pill-dark),
+      .btn-pill-outline:not(#main-nav .btn-pill-outline),
+      section a[href="#"]:not(#main-nav a) {
+        display: none !important;
+      }
+      
+      /* Header color switching styles */
+      #main-nav {
+        transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.1) !important;
+        backdrop-filter: blur(20px);
+      }
+      
+      #main-nav .nav-link-item,
+      #main-nav .logo-text {
+        color: white !important;
+        transition: color 0.3s ease;
+      }
+      
+      #main-nav .nav-btn-signin {
+        background-color: rgba(255, 255, 255, 0.2) !important;
+        color: white !important;
+        border-color: rgba(255, 255, 255, 0.3) !important;
+        transition: all 0.3s ease;
+      }
+      
+      #main-nav .nav-btn-demo {
+        background-color: #2ebaf8 !important;
+        color: white !important;
+        transition: all 0.3s ease;
+      }
+      
+      /* Light mode styles */
+      #main-nav.is-light {
+        background: rgba(255, 255, 255, 0.95) !important;
+        border-color: rgba(46, 186, 248, 0.2) !important;
+      }
+      
       #main-nav.is-light .nav-link-item,
-      #main-nav.is-light .logo-text,
-      #main-nav.is-light .logo-svg { color: var(--color-text-primary) !important; }
-      #main-nav.is-light .nav-btn-signin { background-color: rgba(0,0,0,0.05) !important; color: var(--color-text-primary) !important; }
-      #main-nav.is-light .nav-btn-demo { background-color: var(--color-bg-dark) !important; color: white !important; }
+      #main-nav.is-light .logo-text {
+        color: #0f172a !important;
+      }
+      
+      #main-nav.is-light .nav-btn-signin {
+        background-color: rgba(46, 186, 248, 0.1) !important;
+        color: #2ebaf8 !important;
+        border-color: rgba(46, 186, 248, 0.3) !important;
+      }
+      
+      #main-nav.is-light .nav-btn-signin:hover {
+        background-color: #2ebaf8 !important;
+        color: white !important;
+      }
+      
+      #main-nav.is-light .nav-btn-demo {
+        background-color: #2ebaf8 !important;
+        color: white !important;
+      }
+      
+      #main-nav.is-light .nav-btn-demo:hover {
+        background-color: #0a1628 !important;
+      }
         </style>
         <!-- Header -->
-        <header class="fixed top-4 left-4 right-4 w-auto z-[100] flex items-center justify-between px-10 py-6" data-dynamic="true" data-kid="2-1-1" data-name="floating main navigation bar" data-reason="classes toggled by scroll to change appearance" id="main-nav">
-            <div class="flex items-center gap-12" data-kid="2-1-1-1" data-name="logo and navigation links container">
-                <a class="flex items-center gap-2 group" data-kid="2-1-1-1-1" data-name="logo brand link" href="/index.html">
-                    <svg class="w-6 h-6 text-white transition-colors duration-300 logo-svg" data-kid="2-1-1-1-1-1" data-name="brand logo icon" fill="currentColor" viewbox="0 0 24 24">
-                        <path d="M12 2L13.8 8.8L20.8 10.6L14 12.4L12.2 19.2L10.4 12.4L3.6 10.6L10.6 8.8L12 2Z">
-                        </path>
-                    </svg>
-                    <span class="text-xl font-semibold tracking-tight text-white transition-colors duration-300 logo-text" data-kid="2-1-1-1-1-2" data-name="brand name text">
-                        Semper Fi
-                    </span>
-                </a>
-                <nav class="hidden lg:flex items-center gap-8" data-kid="2-1-1-1-2" data-name="main navigation menu">
-                    <a class="text-sm font-medium text-white/80 hover:text-white nav-link-item" data-kid="2-1-1-1-2-1" data-name="about us link" href="/sobre-nosotros.html">
-                        Sobre nosotros
-                    </a>
-                    <a class="text-sm font-medium text-white/80 hover:text-white nav-link-item" data-kid="2-1-1-1-2-2" data-name="hubspot integration link" href="/domicilios.html">
-                        Domicilios
-                    </a>
-                    <a class="text-sm font-medium text-white/80 hover:text-white nav-link-item" data-kid="2-1-1-1-2-3" data-name="news link" href="/software.html">
-                        Software
-                    </a>
-                    <a class="text-sm font-medium text-white/80 hover:text-white nav-link-item" data-kid="2-1-1-1-2-4" data-name="events link" href="/servicios.html">
-                        Servicios
-                    </a>
-                </nav>
-            </div>
-            <div class="flex items-center gap-4" data-kid="2-1-1-2" data-name="navigation call-to-action buttons container" style="display: none;">
-                <a class="px-5 py-2 rounded-full bg-white/10 text-white text-sm font-medium hover:bg-white/20 transition-colors nav-btn-signin" data-kid="2-1-1-2-1" data-name="sign in button" href="#">
-                    Iniciar sesión
-                </a>
-                <a class="px-5 py-2 rounded-full bg-white text-black text-sm font-medium hover:bg-gray-100 transition-colors nav-btn-demo" data-kid="2-1-1-2-2" data-name="book a demo button" href="#">
-                    Únete ahora
-                </a>
-            </div>
-        </header>
-        <!-- Hero Section -->
-        <section class="relative w-full h-[100vh] min-h-[800px] bg-[#f9f8f6] p-4 flex flex-col items-center" data-kid="2-1-2" data-name="hero section" id="hero-section">
-            <div class="relative w-full h-full rounded-[2.5rem] overflow-hidden" data-kid="2-1-2-1" data-name="hero panel container" id="hero-panel">
-                <img alt="Aira Hero" class="absolute inset-0 w-full h-full object-cover scale-110" data-kid="2-1-2-1-1" data-name="hero background image" decoding="async" id="hero-img" loading="lazy" src="https://cdn.prod.website-files.com/68513e75563291f5d48ada9b/69ea37052c990e8169de4d0a_b557de67bc1083414afb951fc7bae5ce_hero%20bg%20img-p-2000.webp?auto=format&w=2000&q=80&fit=crop"/>
-                <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" data-kid="2-1-2-1-2" data-name="hero image overlay">
-                </div>
-                <div class="absolute inset-0 flex flex-col justify-center p-20" data-kid="2-1-2-1-3" data-name="hero content container">
-                    <div class="max-w-7xl mx-auto w-full" data-kid="2-1-2-1-3-1" data-name="hero text block">
-                        <div class="max-w-2xl">
-                            <h1 class="font-serif text-white text-[3rem] md:text-[4rem] leading-[1.15] mb-8 hero-title-mask" data-kid="2-1-2-1-3-1-1" data-name="hero headline">
-                                El ecosistema digital que impulsa el comercio en Popayán
-                            </h1>
-                            <p class="text-white/90 text-base md:text-lg max-w-xl leading-relaxed mb-10" data-kid="2-1-2-1-3-1-2" data-name="hero description text">
-                                Semper Fi integra domicilios, gestión empresarial y servicios en una sola plataforma. Conectamos clientes, comercios y trabajadores para construir un futuro digital más eficiente y justo.
-                            </p>
-                            <a class="inline-block px-10 py-4 rounded-full bg-white text-black text-base font-medium hover:scale-105 active:scale-95 transition-transform duration-200 shadow-xl" data-kid="2-1-2-1-3-1-3" data-name="primary book a demo button" href="#">
-                                Únete ahora
-                            </a>
-                        </div>
-                    </div>
-                </div>
+        <app-header></app-header>
+        <!-- Hero Section - Imagen Hero.png -->
+        <section class="relative w-full bg-[#0a1628] p-4 flex flex-col items-center" data-kid="2-1-2" data-name="hero section" id="hero-section" style="height: 56.25vw !important; min-height: 450px !important; max-height: 650px !important;">
+            <div class="relative w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl" data-kid="2-1-2-1" data-name="hero panel container" id="hero-panel">
+                <!-- Imagen Hero.png como fondo principal -->
+                <img alt="Semper Fi Hero" class="absolute inset-0 w-full h-full object-cover" data-kid="2-1-2-1-1" data-name="hero main image" decoding="async" id="hero-img" loading="eager" src="/Hero.png" style="object-position: center 35%;"/>
             </div>
         </section>
         <!-- Product Intro Section -->
-        <section class="w-full bg-[#f9f8f6] py-40 px-10" data-kid="2-1-3" data-name="product intro section">
+        <section class="w-full bg-[#f9f8f6] py-16 px-10" data-kid="2-1-3" data-name="product intro section">
             <div class="max-w-7xl mx-auto" data-kid="2-1-3-1" data-name="section container">
-                <div class="mb-32" data-kid="2-1-3-1-1" data-name="section header">
-                    <div class="flex items-center gap-2 mb-10 reveal-up" data-kid="2-1-3-1-1-1" data-name="product section label">
-                        <svg class="w-4 h-4 text-gray-400" data-kid="2-1-3-1-1-1-1" data-name="product icon" fill="currentColor" viewbox="0 0 24 24">
-                            <path d="M12 2L13.8 8.8L20.8 10.6L14 12.4L12.2 19.2L10.4 12.4L3.6 10.6L10.6 8.8L12 2Z">
-                            </path>
-                        </svg>
-                        <span class="font-mono text-gray-500" data-kid="2-1-3-1-1-1-2" data-name="section label text">
-                            Nuestros Servicios
-                        </span>
+                <!-- Header con imagen a la derecha -->
+                <div class="mb-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center" data-kid="2-1-3-1-1" data-name="section header">
+                    <div>
+                        <div class="flex items-center gap-2 mb-10 reveal-up" data-kid="2-1-3-1-1-1" data-name="product section label">
+                            <svg class="w-4 h-4 text-gray-400" data-kid="2-1-3-1-1-1-1" data-name="product icon" fill="currentColor" viewbox="0 0 24 24">
+                                <path d="M12 2L13.8 8.8L20.8 10.6L14 12.4L12.2 19.2L10.4 12.4L3.6 10.6L10.6 8.8L12 2Z">
+                                </path>
+                            </svg>
+                            <span class="font-mono text-gray-500" data-kid="2-1-3-1-1-1-2" data-name="section label text">
+                                Nuestros Servicios
+                            </span>
+                        </div>
+                        <h2 class="font-serif text-[4.5rem] text-[#1c1d1f] leading-[1.1] mb-10 reveal-up" data-kid="2-1-3-1-1-2" data-name="section title">
+                            Tres soluciones en una sola plataforma inteligente
+                        </h2>
+                        <p class="text-[#70706f] text-2xl leading-relaxed reveal-up" data-kid="2-1-3-1-1-3" data-name="section description text">
+                            Conectamos negocios, clientes y trabajadores independientes con tecnología e inteligencia artificial para optimizar cada proceso.
+                        </p>
                     </div>
-                    <h2 class="font-serif text-[4.5rem] text-[#1c1d1f] max-w-4xl leading-[1.1] mb-10 reveal-up" data-kid="2-1-3-1-1-2" data-name="section title">
-                        Tres soluciones en una sola plataforma inteligente
-                    </h2>
-                    <p class="text-[#70706f] text-2xl max-w-2xl leading-relaxed reveal-up" data-kid="2-1-3-1-1-3" data-name="section description text">
-                        Conectamos negocios, clientes y trabajadores independientes con tecnología e inteligencia artificial para optimizar cada proceso.
-                    </p>
+                    <!-- Imagen de animación Semper Fi -->
+                    <div class="reveal-up flex items-center justify-center">
+                        <img src="/Assets/animacion-semperFi.png" alt="Animación Semper Fi" class="w-full max-w-md rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-500" />
+                    </div>
                 </div>
                 <div class="reveal-up" data-kid="2-1-3-1-2" data-name="investor section content">
-                    <div class="divider-line mb-10" data-kid="2-1-3-1-2-1" data-name="divider line">
+                    <div class="divider-line mb-6" data-kid="2-1-3-1-2-1" data-name="divider line">
                     </div>
-                    <h3 class="font-serif text-3xl text-[#1c1d1f] mb-12" data-kid="2-1-3-1-2-2" data-name="section subtitle">
+                    <h3 class="font-serif text-3xl text-[#1c1d1f] mb-8" data-kid="2-1-3-1-2-2" data-name="section subtitle">
                         Para comercios y negocios locales
                     </h3>
                     <div class="relative w-full rounded-3xl overflow-hidden bg-black flex flex-col lg:flex-row min-h-[600px]" data-kid="2-1-3-1-2-3" data-name="investor feature card">
-                        <div class="lg:w-1/2 p-16 flex flex-col justify-between" data-kid="2-1-3-1-2-3-1" data-name="feature card text area">
+                        <div class="lg:w-1/2 p-16 flex flex-col justify-center" data-kid="2-1-3-1-2-3-1" data-name="feature card text area">
                             <div data-kid="2-1-3-1-2-3-1-1" data-name="feature card label area">
                                 <div class="flex items-center gap-3 mb-12" data-kid="2-1-3-1-2-3-1-1-1" data-name="feature card tag indicator">
                                     <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse" data-kid="2-1-3-1-2-3-1-1-1-1" data-name="pulsing indicator">
@@ -210,16 +232,13 @@
                                 <h4 class="font-serif text-white text-5xl leading-[1.2] mb-10" data-kid="2-1-3-1-2-3-1-1-2" data-name="feature card headline">
                                     Control total sobre tu negocio con inteligencia artificial
                                 </h4>
-                                <p class="text-white/50 text-xl leading-relaxed max-w-md mb-16" data-kid="2-1-3-1-2-3-1-1-3" data-name="feature card description">
+                                <p class="text-white/50 text-xl leading-relaxed max-w-md" data-kid="2-1-3-1-2-3-1-1-3" data-name="feature card description">
                                     Semper Fi Software te ayuda a controlar inventarios, calcular costos reales, analizar rentabilidad y tomar decisiones más inteligentes en tiempo real.
                                 </p>
                             </div>
-                            <a class="btn-pill-light w-fit text-base px-8 py-4" data-kid="2-1-3-1-2-3-1-2" data-name="feature card button" href="#">
-                                Conocer más
-                            </a>
                         </div>
                         <div class="lg:w-1/2 relative bg-[#141414] overflow-hidden min-h-[500px]" data-kid="2-1-3-1-2-3-2" data-name="feature card visual mockup">
-                            <img class="absolute inset-0 w-full h-full object-cover opacity-50" data-kid="2-1-3-1-2-3-2-1" data-name="feature card background image" decoding="async" id="investor-panel-img" loading="lazy" src="https://cdn.prod.website-files.com/68513e75563291f5d48ada9b/69ef4da6d488608284e34ede_858d93c661e2f6af533ebbe230222d4e_desktop%20for%20website%2065-p-2000.webp?auto=format&w=1200&q=80&fit=crop"/>
+                            <img class="absolute inset-0 w-full h-full object-cover opacity-80" data-kid="2-1-3-1-2-3-2-1" data-name="feature card background image" decoding="async" id="investor-panel-img" loading="lazy" src="/Comida1.jpeg"/>
                             <div class="absolute inset-0 flex flex-col justify-center px-12 space-y-6" data-kid="2-1-3-1-2-3-2-2" data-name="mockup info cards container">
                                 <div class="bg-black/60 backdrop-blur-3xl border border-white/10 p-6 rounded-2xl transform translate-x-12 shadow-2xl max-w-[380px] self-end" data-kid="2-1-3-1-2-3-2-2-1" data-name="mockup info card 1">
                                     <div class="flex justify-between items-center mb-3" data-kid="2-1-3-1-2-3-2-2-1-1" data-name="info card header">
@@ -231,11 +250,11 @@
                                         </span>
                                     </div>
                                     <p class="text-white/70 text-xs leading-relaxed mb-5" data-kid="2-1-3-1-2-3-2-2-1-2" data-name="company info text">
-                                        Aumentó ventas en 35% con Semper Fi. Costos reducidos y control total del inventario.
+                                        Se estima que puede aumentar sus ventas hasta en un 35%. Control de inventario y reducción de costos operativos.
                                     </p>
                                     <div class="flex gap-4 text-[8px] text-white/30 font-mono" data-kid="2-1-3-1-2-3-2-2-1-3" data-name="company meta data">
                                         <span data-kid="2-1-3-1-2-3-2-2-1-3-1" data-name="meta location">
-                                            POPAYÁN
+                                            Popayán
                                         </span>
                                         <span data-kid="2-1-3-1-2-3-2-2-1-3-2" data-name="meta industry">
                                             RESTAURANTE
@@ -255,11 +274,11 @@
                                         </span>
                                     </div>
                                     <p class="text-white/70 text-xs leading-relaxed mb-5" data-kid="2-1-3-1-2-3-2-2-2-2" data-name="company info text">
-                                        Control de costos mejorado. Ahora saben exactamente cuánto ganan por producto.
+                                        Se estima que puede mejorar el control de costos hasta en un 40%. Análisis detallado de rentabilidad por producto.
                                     </p>
                                     <div class="flex gap-4 text-[8px] text-white/30 font-mono" data-kid="2-1-3-1-2-3-2-2-2-3" data-name="company meta data">
                                         <span data-kid="2-1-3-1-2-3-2-2-2-3-1" data-name="meta location">
-                                            POPAYÁN
+                                            Popayán
                                         </span>
                                         <span data-kid="2-1-3-1-2-3-2-2-2-3-2" data-name="meta industry">
                                             CAFETERÍA
@@ -276,16 +295,16 @@
             </div>
         </section>
         <!-- For B2B Sales -->
-        <section class="w-full bg-[#f9f8f6] py-32 px-10" data-kid="2-1-4" data-name="b2b sales section">
+        <section class="w-full bg-[#f9f8f6] py-12 px-10" data-kid="2-1-4" data-name="b2b sales section">
             <div class="max-w-7xl mx-auto" data-kid="2-1-4-1" data-name="section container">
-                <div class="divider-line mb-10" data-kid="2-1-4-1-1" data-name="divider line">
+                <div class="divider-line mb-6" data-kid="2-1-4-1-1" data-name="divider line">
                 </div>
-                <h3 class="font-serif text-3xl text-[#1c1d1f] mb-12" data-kid="2-1-4-1-2" data-name="section title">
+                <h3 class="font-serif text-3xl text-[#1c1d1f] mb-10" data-kid="2-1-4-1-2" data-name="section title">
                     Para todos los actores del ecosistema
                 </h3>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" data-kid="2-1-4-1-3" data-name="features grid">
-                    <!-- Aira Connect -->
-                    <div class="bg-white rounded-3xl p-16 flex flex-col justify-between min-h-[500px] border border-black/5" data-kid="2-1-4-1-3-1" data-name="crm integration card">
+                    <!-- Semper Fi App -->
+                    <div class="bg-white rounded-3xl p-16 flex flex-col min-h-[500px] border border-black/5" data-kid="2-1-4-1-3-1" data-name="crm integration card">
                         <div data-kid="2-1-4-1-3-1-1" data-name="card content area">
                             <div class="flex items-center gap-3 mb-10" data-kid="2-1-4-1-3-1-1-1" data-name="card label">
                                 <span class="w-2 h-2 rounded-full bg-green-500" data-kid="2-1-4-1-3-1-1-1-1" data-name="label dot">
@@ -334,17 +353,12 @@
                                     </span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="flex items-center gap-6 mt-8" data-kid="2-1-4-1-3-1-2" data-name="card bottom area">
-                            <a class="btn-pill-dark" data-kid="2-1-4-1-3-1-2-1" data-name="book a demo button" href="#">
-                                Únete ahora
-                            </a>
-                            <div class="flex items-center gap-4 opacity-40" data-kid="2-1-4-1-3-1-2-2" data-name="partner logos">
+                            <div class="flex items-center gap-4 opacity-40 justify-center" data-kid="2-1-4-1-3-1-2" data-name="partner logos">
                                 <span class="text-xs font-mono text-gray-400">Disponible en Android e iOS</span>
                             </div>
                         </div>
                     </div>
-                    <!-- Aira API -->
+                    <!-- Semper Fi Software -->
                     <div class="bg-white rounded-3xl p-16 flex flex-col justify-between min-h-[500px] border border-black/5" data-kid="2-1-4-1-3-2" data-name="api card">
                         <div data-kid="2-1-4-1-3-2-1" data-name="card content area">
                             <div class="flex items-center gap-3 mb-10" data-kid="2-1-4-1-3-2-1-1" data-name="card label">
@@ -440,40 +454,29 @@
                                 </div>
                             </div>
                         </div>
-                        <a class="btn-pill-dark w-fit mt-12 px-8" data-kid="2-1-4-1-3-2-2" data-name="talk to sales button" href="#">
-                            Solicitar acceso
-                        </a>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Dark Database Section -->
-        <section class="w-full bg-[#080808] py-56 px-10 relative overflow-hidden" data-kid="2-1-5" data-name="database section">
+        <section class="w-full bg-[#080808] py-20 px-10 relative overflow-hidden" data-kid="2-1-5" data-name="database section">
             <!-- Background Earth -->
             <img class="absolute inset-0 w-full h-full object-cover opacity-20 scale-125" data-kid="2-1-5-1" data-name="earth background image" decoding="async" id="database-bg-img" loading="lazy" src="https://cdn.prod.website-files.com/68513e75563291f5d48ada9b/696df7aeb646a7a2198327de_36fa0c4d18a844367e1911df246f6613_earth.webp?auto=format&w=2000&q=80&fit=crop"/>
             <div class="relative z-10 max-w-7xl mx-auto text-center" data-kid="2-1-5-2" data-name="section content">
                 <h2 class="font-serif text-[4.5rem] text-white leading-[1.1] mb-10 reveal-up" data-kid="2-1-5-2-1" data-name="section headline">
-                    Un ecosistema digital completo para Popayán
+                    Un ecosistema digital completo desde Popayán para el Mundo
                 </h2>
-                <p class="text-white/60 text-2xl max-w-2xl mx-auto mb-16 reveal-up" data-kid="2-1-5-2-2" data-name="section description">
+                <p class="text-white/60 text-2xl max-w-2xl mx-auto mb-8 reveal-up" data-kid="2-1-5-2-2" data-name="section description">
                     Semper Fi conecta comercios, clientes y trabajadores en un ecosistema digital completo e inteligente.
                 </p>
-                <div class="flex justify-center gap-6 mb-24 reveal-up" data-kid="2-1-5-2-3" data-name="cta buttons container">
-                    <a class="btn-pill-light px-10 py-4 text-base" data-kid="2-1-5-2-3-1" data-name="book a demo button" href="#">
-                        Únete ahora
-                    </a>
-                    <a class="btn-pill-outline px-10 py-4 text-base hover:bg-white/10 transition-colors" data-kid="2-1-5-2-3-2" data-name="hubspot integration button" href="#">
-                        Ver más
-                    </a>
-                </div>
                 <!-- Metrics -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 text-left border-t border-white/10 pt-24 reveal-up" data-kid="2-1-5-2-4" data-name="metrics grid">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 text-left border-t border-white/10 pt-16 reveal-up" data-kid="2-1-5-2-4" data-name="metrics grid">
                     <div class="metric-item" data-kid="2-1-5-2-4-1" data-name="metric item">
                         <div class="text-[5rem] text-white font-light mb-6 tracking-tighter counter-val" data-dynamic="true" data-kid="2-1-5-2-4-1-1" data-name="metric counter value" data-reason="number incremented by script" data-target="100">
                             100+
                         </div>
                         <p class="text-white/50 text-base leading-relaxed max-w-[240px]" data-kid="2-1-5-2-4-1-2" data-name="metric label">
-                            Comercios conectados en Popayán con acceso a tecnología de punta
+                            Analizados comercios para mejorar la eficiencia en la entrega de domicilios
                         </p>
                     </div>
                     <div class="metric-item" data-kid="2-1-5-2-4-2" data-name="metric item">
@@ -481,7 +484,7 @@
                             500+
                         </div>
                         <p class="text-white/50 text-base leading-relaxed max-w-[240px]" data-kid="2-1-5-2-4-2-2" data-name="metric label">
-                            Trabajadores independientes generando ingresos en la plataforma
+                            Estudio de trabajos independientes para garantizar un buen servicio para usuarios finales y trabajadores
                         </p>
                     </div>
                     <div class="metric-item" data-kid="2-1-5-2-4-3" data-name="metric item">
@@ -497,7 +500,7 @@
                             3
                         </div>
                         <p class="text-white/50 text-base leading-relaxed max-w-[240px]" data-kid="2-1-5-2-4-4-2" data-name="metric label">
-                            Soluciones integradas: Domicilios, Software y Servicios
+                            Domicilios, Servicios e Inteligencia Artificial
                         </p>
                     </div>
                 </div>
@@ -533,8 +536,8 @@
             <!-- Feature 02 -->
             <div class="feature-row-pinned px-10 border-b border-white/5" data-kid="2-1-6-2" data-name="pinned feature row 2">
                 <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-24 items-center w-full" data-kid="2-1-6-2-1" data-name="feature content">
-                    <div class="lg:w-1/2 order-2 lg:order-1 relative rounded-[2.5rem] overflow-hidden aspect-[4/3] bg-neutral-900" data-kid="2-1-6-2-1-1" data-name="feature visual side">
-                        <img alt="Feature 2" class="w-full h-full object-cover opacity-90" data-kid="2-1-6-2-1-1-1" data-name="feature image" decoding="async" loading="lazy" src="https://cdn.prod.website-files.com/68513e75563291f5d48ada9b/69ef77225f05ad01f9c92a35_3fa0d38e29910547442d7fde55b88d08_opportunity%20and%20risk-p-2000.webp?auto=format&w=1200&q=80&fit=crop"/>
+                    <div class="lg:w-1/2 order-2 lg:order-1 relative rounded-[2.5rem] overflow-hidden aspect-[4/3] bg-[#c5dde8]" data-kid="2-1-6-2-1-1" data-name="feature visual side">
+                        <img alt="Feature 2" class="w-full h-full object-contain" data-kid="2-1-6-2-1-1-1" data-name="feature image" decoding="async" loading="lazy" src="/Assets/Efiia-image.png"/>
                     </div>
                     <div class="lg:w-1/2 order-1 lg:order-2 py-20" data-kid="2-1-6-2-1-2" data-name="feature text side">
                         <span class="text-white/40 text-[10px] font-mono mb-10 block" data-kid="2-1-6-2-1-2-1" data-name="feature index">
@@ -543,12 +546,9 @@
                         <h3 class="font-serif text-6xl text-white mb-10 leading-[1.1] drop-shadow-lg" data-kid="2-1-6-2-1-2-2" data-name="feature title">
                             Toma decisiones inteligentes con datos en tiempo real
                         </h3>
-                        <p class="text-white/90 text-2xl leading-relaxed mb-12 drop-shadow-md" data-kid="2-1-6-2-1-2-3" data-name="feature description">
+                        <p class="text-white/90 text-2xl leading-relaxed drop-shadow-md" data-kid="2-1-6-2-1-2-3" data-name="feature description">
                             Semper Fi Software monitorea inventarios, ventas, costos y rentabilidad. Con inteligencia artificial integrada, sabrás exactamente cuánto ganas por producto y qué decisiones tomar para crecer.
                         </p>
-                        <a class="btn-pill-light w-fit px-10 py-4 text-base" data-kid="2-1-6-2-1-2-4" data-name="book a demo button" href="#">
-                            Solicitar acceso
-                        </a>
                     </div>
                 </div>
             </div>
@@ -570,7 +570,7 @@
                     <a class="text-[#70706f] hover:text-black font-sans text-lg flex items-center gap-2 mb-2 group" data-kid="2-1-7-1-1-2" data-name="all news link" href="#">
                         Ver todas
                         <span class="group-hover:translate-x-1 transition-transform" data-kid="2-1-7-1-1-2-1" data-name="arrow icon">
-                            →
+                            ?
                         </span>
                     </a>
                 </div>
@@ -661,15 +661,12 @@
                         <p class="text-white/60 text-lg leading-relaxed mb-10" data-kid="2-1-8-1-1-1-3" data-name="row description 1">
                             Conecta clientes con múltiples comercios afiliados. Los pedidos se gestionan y asignan automáticamente a repartidores disponibles, optimizando tiempos de entrega y reduciendo costos operativos sin necesidad de infraestructura propia.
                         </p>
-                        <p class="text-white/30 text-base mb-12 italic" data-kid="2-1-8-1-1-1-4" data-name="row description 2">
+                        <p class="text-white/30 text-base italic" data-kid="2-1-8-1-1-1-4" data-name="row description 2">
                             Más ventas para los negocios, mejores precios para los clientes, ingresos flexibles para repartidores.
                         </p>
-                        <a class="btn-pill-light w-fit" data-kid="2-1-8-1-1-1-5" data-name="book a demo button" href="#">
-                            Únete ahora
-                        </a>
                     </div>
-                    <div class="lg:w-1/2 relative rounded-[2rem] overflow-hidden aspect-[4/3]" data-kid="2-1-8-1-1-2" data-name="row image area">
-                        <img alt="Intelligence 1" class="w-full h-full object-cover" data-kid="2-1-8-1-1-2-1" data-name="row image" decoding="async" loading="lazy" src="https://cdn.prod.website-files.com/68513e75563291f5d48ada9b/6971177432ff087027915fc9_f276e7ddc524dfe27b757fb957c8212f_News%20and%20financial%20monitoring%20across%20your%20entire%20portfolio-p-2000.webp?auto=format&w=1200&q=80&fit=crop"/>
+                    <div class="lg:w-1/2 relative rounded-[2rem] overflow-hidden aspect-[4/3] bg-neutral-900" data-kid="2-1-8-1-1-2" data-name="row image area">
+                        <img alt="Intelligence 1" class="w-full h-full object-contain" data-kid="2-1-8-1-1-2-1" data-name="row image" decoding="async" loading="lazy" src="/Assets/conectandoTC.png"/>
                     </div>
                 </div>
                 <!-- Intelligence Row 02 -->
@@ -692,32 +689,7 @@
                         </a>
                     </div>
                 </div>
-                <!-- Intelligence Row 03 -->
-                <div class="intelligence-row py-40 flex flex-col lg:flex-row gap-24 items-center" data-kid="2-1-8-1-3" data-name="row 3">
-                    <div class="lg:w-1/2" data-kid="2-1-8-1-3-1" data-name="row text area">
-                        <span class="text-white/40 text-[10px] font-mono mb-10 block" data-kid="2-1-8-1-3-1-1" data-name="row index">
-                            03
-                        </span>
-                        <h3 class="font-serif text-[3.5rem] text-white mb-10 leading-[1.1]" data-kid="2-1-8-1-3-1-2" data-name="row title">
-                            You can’t keep track of it all. Aira can.
-                        </h3>
-                        <p class="text-white/60 text-lg leading-relaxed mb-10" data-kid="2-1-8-1-3-1-3" data-name="row description 1">
-                            Sistema completo para restaurantes y cafeterías que controla inventarios, calcula el costo real de cada producto, registra ventas, gestiona gastos y analiza rentabilidad en tiempo real. Con IA integrada para ayudarte a tomar mejores decisiones.
-                        </p>
-                        <p class="text-white/30 text-base mb-12" data-kid="2-1-8-1-3-1-4" data-name="row description 2">
-                            Entiende cuánto ganas realmente y toma decisiones más eficientes desde una plataforma sencilla.
-                        </p>
-                        <a class="btn-pill-light w-fit" data-kid="2-1-8-1-3-1-5" data-name="book a demo button" href="#">
-                            Solicitar acceso
-                        </a>
-                    </div>
-                    <div class="lg:w-1/2 relative rounded-[2rem] overflow-hidden aspect-[4/3]" data-kid="2-1-8-1-3-2" data-name="row image area">
-                        <img alt="Intelligence 3" class="w-full h-full object-cover" data-kid="2-1-8-1-3-2-1" data-name="row image" decoding="async" loading="lazy" src="https://cdn.prod.website-files.com/68513e75563291f5d48ada9b/6970c8fca3eba219d35aad0d_676c6e25b38e2f972faf879f137f2ccf_You%20can%27t%20keep%20track%20of%20it%20all.%20Aira%20can.-p-2000.webp?auto=format&w=1200&q=80&fit=crop"/>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Chat Showcase -->
+                </div>`n        </section>`n        <!-- Chat Showcase -->
         <section class="w-full bg-[#080808] py-40 px-10" data-kid="2-1-9" data-name="chat showcase section">
             <div class="max-w-6xl mx-auto rounded-[3rem] overflow-hidden bg-white/5 border border-white/10 aspect-video relative group shadow-2xl" data-kid="2-1-9-1" data-name="chat mockup wrapper">
                 <div class="absolute inset-0 flex items-center justify-center p-12" data-kid="2-1-9-1-1" data-name="chat interface">
@@ -949,6 +921,7 @@
                 </div>
             </div>
         </section>
+        
         <!-- Footer -->
         <footer class="w-full bg-[#f9f8f6] py-32 px-10 border-t border-black/5" data-kid="2-1-11" data-name="footer">
             <div class="max-w-7xl mx-auto" data-kid="2-1-11-1" data-name="footer container">
@@ -960,73 +933,73 @@
                                 </path>
                             </svg>
                             <span class="text-3xl font-semibold tracking-tight" data-kid="2-1-11-1-1-1-1-2" data-name="brand name">
-                                Aira
+                                Semper Fi
                             </span>
                         </div>
                         <p class="text-[#70706f] text-sm leading-relaxed" data-kid="2-1-11-1-1-1-2" data-name="copyright info">
-                            © 2026 Aira. Sveavägen 34, 111 34 Stockholm, Sweden.
+                            © 2026 Semper Fi. Popayán, Cauca, Colombia.
                             <br data-kid="2-1-11-1-1-1-2-1" data-name="break tag"/>
                             Org.nr: 5595734681
                         </p>
                     </div>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-16 flex-1" data-kid="2-1-11-1-1-2" data-name="footer links">
                         <div data-kid="2-1-11-1-1-2-1" data-name="link group 1">
-                            <h5 class="text-[10px] font-mono text-gray-400 mb-8" data-kid="2-1-11-1-1-2-1-1" data-name="group title">
-                                Product
+                            <h5 class="text-[10px] font-mono text-gray-400 mb-8 uppercase tracking-widest" data-kid="2-1-11-1-1-2-1-1" data-name="group title">
+                                Producto
                             </h5>
                             <ul class="space-y-4" data-kid="2-1-11-1-1-2-1-2" data-name="group list">
                                 <li data-kid="2-1-11-1-1-2-1-2-1" data-name="link item">
                                     <a class="font-serif text-xl hover:text-gray-500 transition-colors" data-kid="2-1-11-1-1-2-1-2-1-1" data-name="link" href="#">
-                                        Pricing
+                                        Precios
                                     </a>
                                 </li>
                                 <li data-kid="2-1-11-1-1-2-1-2-2" data-name="link item">
-                                    <a class="font-serif text-xl hover:text-gray-500 transition-colors" data-kid="2-1-11-1-1-2-1-2-2-1" data-name="link" href="#">
-                                        HubSpot integration
+                                    <a class="font-serif text-xl hover:text-gray-500 transition-colors" data-kid="2-1-11-1-1-2-1-2-2-1" data-name="link" href="/domicilios.html">
+                                        Domicilios
                                     </a>
                                 </li>
                                 <li data-kid="2-1-11-1-1-2-1-2-3" data-name="link item">
-                                    <a class="font-serif text-xl hover:text-gray-500 transition-colors" data-kid="2-1-11-1-1-2-1-2-3-1" data-name="link" href="#">
-                                        Book a demo
+                                    <a class="font-serif text-xl hover:text-gray-500 transition-colors" data-kid="2-1-11-1-1-2-1-2-3-1" data-name="link" href="/software.html">
+                                        Software
                                     </a>
                                 </li>
                             </ul>
                         </div>
                         <div data-kid="2-1-11-1-1-2-2" data-name="link group 2">
-                            <h5 class="text-[10px] font-mono text-gray-400 mb-8" data-kid="2-1-11-1-1-2-2-1" data-name="group title">
-                                Company
+                            <h5 class="text-[10px] font-mono text-gray-400 mb-8 uppercase tracking-widest" data-kid="2-1-11-1-1-2-2-1" data-name="group title">
+                                Compañía
                             </h5>
                             <ul class="space-y-4" data-kid="2-1-11-1-1-2-2-2" data-name="group list">
                                 <li data-kid="2-1-11-1-1-2-2-2-1" data-name="link item">
-                                    <a class="font-serif text-xl hover:text-gray-500 transition-colors" data-kid="2-1-11-1-1-2-2-2-1-1" data-name="link" href="#">
-                                        About us
+                                    <a class="font-serif text-xl hover:text-gray-500 transition-colors" data-kid="2-1-11-1-1-2-2-2-1-1" data-name="link" href="/sobre-nosotros.html">
+                                        Sobre nosotros
                                     </a>
                                 </li>
                                 <li data-kid="2-1-11-1-1-2-2-2-2" data-name="link item">
                                     <a class="font-serif text-xl hover:text-gray-500 transition-colors" data-kid="2-1-11-1-1-2-2-2-2-1" data-name="link" href="#">
-                                        News
+                                        Noticias
                                     </a>
                                 </li>
                                 <li data-kid="2-1-11-1-1-2-2-2-3" data-name="link item">
                                     <a class="font-serif text-xl hover:text-gray-500 transition-colors" data-kid="2-1-11-1-1-2-2-2-3-1" data-name="link" href="#">
-                                        Revenue journal
+                                        Blog
                                     </a>
                                 </li>
                                 <li data-kid="2-1-11-1-1-2-2-2-4" data-name="link item">
                                     <a class="font-serif text-xl hover:text-gray-500 transition-colors" data-kid="2-1-11-1-1-2-2-2-4-1" data-name="link" href="#">
-                                        Partner program
+                                        Programa de aliados
                                     </a>
                                 </li>
                             </ul>
                         </div>
                         <div data-kid="2-1-11-1-1-2-3" data-name="link group 3">
-                            <h5 class="text-[10px] font-mono text-gray-400 mb-8" data-kid="2-1-11-1-1-2-3-1" data-name="group title">
-                                Connect
+                            <h5 class="text-[10px] font-mono text-gray-400 mb-8 uppercase tracking-widest" data-kid="2-1-11-1-1-2-3-1" data-name="group title">
+                                Contacto
                             </h5>
                             <ul class="space-y-4" data-kid="2-1-11-1-1-2-3-2" data-name="group list">
                                 <li data-kid="2-1-11-1-1-2-3-2-1" data-name="link item">
                                     <a class="font-serif text-xl hover:text-gray-500 transition-colors" data-kid="2-1-11-1-1-2-3-2-1-1" data-name="link" href="#">
-                                        Events
+                                        Eventos
                                     </a>
                                 </li>
                                 <li data-kid="2-1-11-1-1-2-3-2-2" data-name="link item">
@@ -1035,30 +1008,30 @@
                                     </a>
                                 </li>
                                 <li data-kid="2-1-11-1-1-2-3-2-3" data-name="link item">
-                                    <a class="font-serif text-xl hover:text-gray-500 transition-colors" data-kid="2-1-11-1-1-2-3-2-3-1" data-name="link" href="#">
-                                        info@aira.app
+                                    <a class="font-serif text-xl hover:text-gray-500 transition-colors" data-kid="2-1-11-1-1-2-3-2-3-1" data-name="link" href="mailto:info@semperfi.app">
+                                        info@semperfi.app
                                     </a>
                                 </li>
                             </ul>
                         </div>
                         <div data-kid="2-1-11-1-1-2-4" data-name="link group 4">
-                            <h5 class="text-[10px] font-mono text-gray-400 mb-8" data-kid="2-1-11-1-1-2-4-1" data-name="group title">
+                            <h5 class="text-[10px] font-mono text-gray-400 mb-8 uppercase tracking-widest" data-kid="2-1-11-1-1-2-4-1" data-name="group title">
                                 Legal
                             </h5>
                             <ul class="space-y-4" data-kid="2-1-11-1-1-2-4-2" data-name="group list">
                                 <li data-kid="2-1-11-1-1-2-4-2-1" data-name="link item">
                                     <a class="font-serif text-xl hover:text-gray-500 transition-colors" data-kid="2-1-11-1-1-2-4-2-1-1" data-name="link" href="#">
-                                        Terms and conditions
+                                        Términos y condiciones
                                     </a>
                                 </li>
                                 <li data-kid="2-1-11-1-1-2-4-2-2" data-name="link item">
                                     <a class="font-serif text-xl hover:text-gray-500 transition-colors" data-kid="2-1-11-1-1-2-4-2-2-1" data-name="link" href="#">
-                                        Partner agreement
+                                        Acuerdo de aliados
                                     </a>
                                 </li>
                                 <li data-kid="2-1-11-1-1-2-4-2-3" data-name="link item">
                                     <a class="font-serif text-xl hover:text-gray-500 transition-colors" data-kid="2-1-11-1-1-2-4-2-3-1" data-name="link" href="#">
-                                        Privacy policy
+                                        Política de privacidad
                                     </a>
                                 </li>
                                 <li data-kid="2-1-11-1-1-2-4-2-4" data-name="link item">
@@ -1068,7 +1041,7 @@
                                 </li>
                                 <li data-kid="2-1-11-1-1-2-4-2-5" data-name="link item">
                                     <a class="font-serif text-xl hover:text-gray-500 transition-colors" data-kid="2-1-11-1-1-2-4-2-5-1" data-name="link" href="#">
-                                        Cookie policy
+                                        Política de cookies
                                     </a>
                                 </li>
                             </ul>
@@ -1155,27 +1128,40 @@
   // Header Color Switching
   const sections = gsap.utils.toArray('section');
   sections.forEach(section => {
-    const isDark = section.id === 'hero-section' || section.classList.contains('bg-[#080808]');
+    // Detectar secciones oscuras: hero, secciones con bg-[#080808] o bg-[#0a1628]
+    const isDark = section.id === 'hero-section' || 
+                   section.classList.contains('bg-[#080808]') ||
+                   section.classList.contains('bg-[#0a1628]') ||
+                   section.style.backgroundColor === 'rgb(8, 8, 8)' ||
+                   section.style.backgroundColor === 'rgb(10, 22, 40)';
+    
     ScrollTrigger.create({
       trigger: section,
-      start: "top 60px",
+      start: "top 100px",
+      end: "bottom 100px",
       onEnter: () => updateHeader(isDark),
-      onEnterBack: () => updateHeader(isDark)
+      onEnterBack: () => updateHeader(isDark),
+      onLeave: () => {
+        // Al salir de la sección, verificar la siguiente
+        const nextSection = section.nextElementSibling;
+        if (nextSection && nextSection.tagName === 'SECTION') {
+          const isNextDark = nextSection.id === 'hero-section' || 
+                            nextSection.classList.contains('bg-[#080808]') ||
+                            nextSection.classList.contains('bg-[#0a1628]');
+          updateHeader(isNextDark);
+        }
+      }
     });
   });
 
   function updateHeader(isDark) {
     const header = document.querySelector('#main-nav');
-    const btnSignIn = header.querySelector('.nav-btn-signin');
-    const btnDemo = header.querySelector('.nav-btn-demo');
-    header.classList.toggle('is-light', !isDark);
-
+    if (!header) return;
+    
     if (isDark) {
-      btnSignIn.classList.remove('bg-black/5'); btnSignIn.classList.add('bg-white/10');
-      btnDemo.classList.remove('bg-black'); btnDemo.classList.add('bg-white');
+      header.classList.remove('is-light');
     } else {
-      btnSignIn.classList.add('bg-black/5'); btnSignIn.classList.remove('bg-white/10');
-      btnDemo.classList.add('bg-black'); btnDemo.classList.remove('bg-white');
+      header.classList.add('is-light');
     }
   }
 
@@ -1213,6 +1199,8 @@
     ScrollTrigger.getAll().forEach(t => t.kill());
   }
 </script>
+
+<app-footer></app-footer>
 
 </body>
 </html>

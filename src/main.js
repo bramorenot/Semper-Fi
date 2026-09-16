@@ -1,4 +1,8 @@
 // Punto de entrada principal
 import './styles/main.css';
 
-console.log('✅ Semper Fi cargado correctamente');
+// Importar componentes Web Components
+import './components/AppHeader.js';
+import './components/AppFooter.js';
+
+console.log('✅ Semper Fi cargado correctamente - Componentes registrados');

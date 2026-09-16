@@ -2,38 +2,39 @@
  * Semper Fi - Estilos Personalizados
  */
 
+/* Importar fuentes PRIMERO */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Roboto+Mono:wght@400;500&display=swap');
+
 /* Importar Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Importar fuentes */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Roboto+Mono:wght@400;500&display=swap');
-
 /* Variables CSS personalizadas - Color corporativo Semper Fi */
 @layer base {
   :root {
-    --color-primary: #2ebaf8; /* Azul Semper Fi - Color corporativo */
-    --color-primary-light: #5dcbfb; /* Azul claro */
-    --color-primary-dark: #1a9ad6; /* Azul oscuro */
-    --color-secondary: #0d94c9; /* Azul secundario */
-    --color-accent: #1ebde8; /* Azul acento */
-    --color-dark: #0a1628; /* Azul muy oscuro */
-    --color-light: #f0f9ff; /* Azul muy claro */
+    --color-primary: #2ebaf8;
+    --color-primary-light: #5dcbfb;
+    --color-primary-dark: #1a9ad6;
+    --color-secondary: #0d94c9;
+    --color-accent: #1ebde8;
+    --color-dark: #0a1628;
+    --color-light: #f0f9ff;
     --color-gradient-start: #2ebaf8;
     --color-gradient-end: #1a7cc2;
   }
 }
 
 /* Estilos globales personalizados */
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-/* Scroll suave nativo como fallback */
-html {
-  scroll-behavior: smooth;
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* Animaciones personalizadas */
@@ -48,6 +49,16 @@ html {
   }
 }
 
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Utilities personalizadas */
 @layer utilities {
   .animate-fade-in-up {
     animation: fadeInUp 0.6s ease-out;
@@ -83,46 +94,47 @@ html {
   }
 }
 
-/* Estilos adicionales para mejorar la experiencia */
-.feature-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+/* Componentes personalizados */
+@layer components {
+  .feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
-.feature-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(46, 186, 248, 0.4);
-}
+  .feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(46, 186, 248, 0.4);
+  }
 
-/* Botones con estilo corporativo */
-.btn-semperfi {
-  background: linear-gradient(135deg, #2ebaf8 0%, #1a9ad6 100%);
-  color: white;
-  padding: 0.75rem 2rem;
-  border-radius: 9999px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-}
+  .btn-semperfi {
+    background: linear-gradient(135deg, #2ebaf8 0%, #1a9ad6 100%);
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
 
-.btn-semperfi:hover {
-  background: white;
-  color: #2ebaf8;
-  border-color: #2ebaf8;
-  transform: scale(1.05);
-}
+  .btn-semperfi:hover {
+    background: white;
+    color: #2ebaf8;
+    border-color: #2ebaf8;
+    transform: scale(1.05);
+  }
 
-.btn-semperfi-outline {
-  background: transparent;
-  color: #2ebaf8;
-  padding: 0.75rem 2rem;
-  border-radius: 9999px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border: 2px solid #2ebaf8;
-}
+  .btn-semperfi-outline {
+    background: transparent;
+    color: #2ebaf8;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid #2ebaf8;
+  }
 
-.btn-semperfi-outline:hover {
-  background: #2ebaf8;
-  color: white;
-  transform: scale(1.05);
+  .btn-semperfi-outline:hover {
+    background: #2ebaf8;
+    color: white;
+    transform: scale(1.05);
+  }
 }

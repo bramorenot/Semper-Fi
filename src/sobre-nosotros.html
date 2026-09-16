@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sobre Nosotros — Semper Fi</title>
+  
+  <!-- Favicon - Logo de Semper Fi con fondo degradado -->
+  <link rel="icon" type="image/png" href="/Assets/1_1_Logo_Semper_Fi_Con_Fondo_Degradado.png" />
+  <link rel="apple-touch-icon" href="/Assets/1_1_Logo_Semper_Fi_Con_Fondo_Degradado.png" />
+  
   <link rel="stylesheet" href="https://unpkg.com/lenis@1/dist/lenis.css"/>
   <script type="module" src="/main.js"></script>
 </head>
@@ -59,22 +64,7 @@
         </style>
         
         <!-- Header -->
-        <header class="fixed top-4 left-4 right-4 w-auto z-[100] flex items-center justify-between px-10 py-6 is-light" id="main-nav">
-            <div class="flex items-center gap-12">
-                <a class="flex items-center gap-2 group" href="/index.html">
-                    <svg class="w-6 h-6 text-black transition-colors duration-300 logo-svg" fill="currentColor" viewbox="0 0 24 24">
-                        <path d="M12 2L13.8 8.8L20.8 10.6L14 12.4L12.2 19.2L10.4 12.4L3.6 10.6L10.6 8.8L12 2Z"></path>
-                    </svg>
-                    <span class="text-xl font-semibold tracking-tight text-black transition-colors duration-300 logo-text">Semper Fi</span>
-                </a>
-                <nav class="hidden lg:flex items-center gap-8">
-                    <a class="text-sm font-medium text-black/80 hover:text-black nav-link-item" href="/sobre-nosotros.html">Sobre nosotros</a>
-                    <a class="text-sm font-medium text-black/80 hover:text-black nav-link-item" href="/domicilios.html">Domicilios</a>
-                    <a class="text-sm font-medium text-black/80 hover:text-black nav-link-item" href="/software.html">Software</a>
-                    <a class="text-sm font-medium text-black/80 hover:text-black nav-link-item" href="/servicios.html">Servicios</a>
-                </nav>
-            </div>
-        </header>
+        <app-header></app-header>
 
         <!-- Hero Section -->
         <section class="relative w-full min-h-[80vh] bg-[#f9f8f6] pt-32 pb-20 px-10 flex items-center">
@@ -190,48 +180,62 @@
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <!-- Team Member 1 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                    <!-- Team Member 1: Melki Santiago -->
                     <div class="text-center reveal-up">
-                        <div class="w-48 h-48 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 mx-auto mb-8"></div>
-                        <h3 class="font-serif text-2xl text-white mb-2">Carlos Moreno</h3>
-                        <p class="text-white/40 text-sm font-mono mb-4">CEO & Fundador</p>
-                        <p class="text-white/60 text-base">Visionario detrás de Semper Fi con experiencia en tecnología y emprendimiento.</p>
+                        <div class="w-48 h-48 rounded-full overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600 mx-auto mb-8">
+                            <img src="/integrantes/melki-santiago.png" alt="Melki Santiago Meneses" class="w-full h-full object-cover"/>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white mb-2">Melki Santiago Meneses</h3>
+                        <p class="text-white/40 text-sm font-mono mb-4">CEO</p>
+                        <p class="text-white/60 text-base">312 830 4815</p>
                     </div>
 
-                    <!-- Team Member 2 -->
+                    <!-- Team Member 2: Brayan Alexander -->
                     <div class="text-center reveal-up">
-                        <div class="w-48 h-48 rounded-full bg-gradient-to-br from-green-500 to-teal-600 mx-auto mb-8"></div>
-                        <h3 class="font-serif text-2xl text-white mb-2">María González</h3>
-                        <p class="text-white/40 text-sm font-mono mb-4">CTO</p>
-                        <p class="text-white/60 text-base">Experta en desarrollo de software e inteligencia artificial aplicada a negocios.</p>
+                        <div class="w-48 h-48 rounded-full overflow-hidden bg-gradient-to-br from-green-500 to-teal-600 mx-auto mb-8">
+                            <img src="/integrantes/alexander-trullo.png" alt="Brayan Alexander Moreno" class="w-full h-full object-cover"/>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white mb-2">Brayan Alexander Moreno</h3>
+                        <p class="text-white/40 text-sm font-mono mb-4">Equipo directivo</p>
+                        <p class="text-white/60 text-base">320 490 7166</p>
                     </div>
 
-                    <!-- Team Member 3 -->
+                    <!-- Team Member 3: Oscar Geovanny -->
                     <div class="text-center reveal-up">
-                        <div class="w-48 h-48 rounded-full bg-gradient-to-br from-orange-500 to-red-600 mx-auto mb-8"></div>
-                        <h3 class="font-serif text-2xl text-white mb-2">Juan Pérez</h3>
-                        <p class="text-white/40 text-sm font-mono mb-4">Director de Operaciones</p>
-                        <p class="text-white/60 text-base">Especialista en logística y optimización de procesos empresariales.</p>
+                        <div class="w-48 h-48 rounded-full overflow-hidden bg-gradient-to-br from-orange-500 to-red-600 mx-auto mb-8">
+                            <img src="/integrantes/oscar-yepez.png" alt="Oscar Geovanny Yepez" class="w-full h-full object-cover"/>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white mb-2">Oscar Geovanny Yepez</h3>
+                        <p class="text-white/40 text-sm font-mono mb-4">Equipo directivo</p>
+                        <p class="text-white/60 text-base">317 678 7691</p>
+                    </div>
+
+                    <!-- Team Member 4: David Urrutia -->
+                    <div class="text-center reveal-up">
+                        <div class="w-48 h-48 rounded-full overflow-hidden bg-gradient-to-br from-purple-500 to-pink-600 mx-auto mb-8">
+                            <img src="/integrantes/david-urrutia.png" alt="David Urrutia Cerón" class="w-full h-full object-cover"/>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white mb-2">David Urrutia Cerón</h3>
+                        <p class="text-white/40 text-sm font-mono mb-4">Equipo directivo</p>
+                        <p class="text-white/60 text-base">302 228 6774</p>
+                    </div>
+
+                    <!-- Team Member 5: Deiby Alejandro -->
+                    <div class="text-center reveal-up">
+                        <div class="w-48 h-48 rounded-full overflow-hidden bg-gradient-to-br from-cyan-500 to-blue-600 mx-auto mb-8">
+                            <img src="/integrantes/deiby-ramirez.png" alt="Deiby Alejandro Ramirez Galvis" class="w-full h-full object-cover"/>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white mb-2">Deiby Alejandro Ramirez Galvis</h3>
+                        <p class="text-white/40 text-sm font-mono mb-4">Equipo directivo</p>
+                        <p class="text-white/60 text-base">311 767 6493</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="w-full bg-[#f9f8f6] py-32 px-10 border-t border-black/5">
-            <div class="max-w-7xl mx-auto text-center">
-                <div class="flex items-center justify-center gap-3 mb-12">
-                    <svg class="w-8 h-8 text-black" fill="currentColor" viewbox="0 0 24 24">
-                        <path d="M12 2L13.8 8.8L20.8 10.6L14 12.4L12.2 19.2L10.4 12.4L3.6 10.6L10.6 8.8L12 2Z"></path>
-                    </svg>
-                    <span class="text-3xl font-semibold tracking-tight">Semper Fi</span>
-                </div>
-                <p class="text-[#70706f] text-sm leading-relaxed">
-                    © 2026 Semper Fi. Popayán, Colombia.
-                </p>
-            </div>
-        </footer>
+        <app-footer></app-footer>
     </div>
 </div>
 
