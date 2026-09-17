@@ -14,9 +14,11 @@ class AppFooter extends HTMLElement {
           <div class="flex flex-col lg:flex-row justify-between gap-24">
             <div class="lg:max-w-sm">
               <div class="flex items-center gap-3 mb-12">
-                <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2L13.8 8.8L20.8 10.6L14 12.4L12.2 19.2L10.4 12.4L3.6 10.6L10.6 8.8L12 2Z"></path>
-                </svg>
+                <div class="w-10 h-10 rounded-full overflow-hidden shadow-lg">
+                  <img src="/Assets/1_1_Logo_Semper_Fi_Con_Fondo_Degradado.png" 
+                       alt="Semper Fi Logo" 
+                       class="w-full h-full object-cover" />
+                </div>
                 <span class="text-3xl font-semibold tracking-tight">Semper Fi</span>
               </div>
               <p class="text-[#70706f] text-sm leading-relaxed">
@@ -38,16 +40,11 @@ class AppFooter extends HTMLElement {
                 <h5 class="text-[10px] font-mono text-gray-400 mb-8 uppercase tracking-widest">Compañía</h5>
                 <ul class="space-y-4">
                   <li><a class="font-serif text-xl hover:text-gray-500 transition-colors" href="/sobre-nosotros.html">Sobre nosotros</a></li>
-                  <li><a class="font-serif text-xl hover:text-gray-500 transition-colors" href="#">Noticias</a></li>
-                  <li><a class="font-serif text-xl hover:text-gray-500 transition-colors" href="#">Blog</a></li>
-                  <li><a class="font-serif text-xl hover:text-gray-500 transition-colors" href="#">Programa de aliados</a></li>
                 </ul>
               </div>
               <div>
                 <h5 class="text-[10px] font-mono text-gray-400 mb-8 uppercase tracking-widest">Contacto</h5>
                 <ul class="space-y-4">
-                  <li><a class="font-serif text-xl hover:text-gray-500 transition-colors" href="#">Eventos</a></li>
-                  <li><a class="font-serif text-xl hover:text-gray-500 transition-colors" href="#">LinkedIn</a></li>
                   <li><a class="font-serif text-xl hover:text-gray-500 transition-colors" href="mailto:info@semperfi.app">info@semperfi.app</a></li>
                 </ul>
               </div>

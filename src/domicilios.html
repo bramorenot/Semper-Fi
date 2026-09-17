@@ -47,6 +47,32 @@
       }
 
       .reveal-up { transform: translateY(40px); opacity: 0; }
+      
+      /* Fix footer text colors */
+      app-footer footer * {
+        color: inherit !important;
+      }
+      
+      app-footer footer {
+        color: #1c1d1f !important;
+      }
+      
+      app-footer footer .text-gray-400,
+      app-footer footer .text-white\/40 {
+        color: #9ca3af !important;
+      }
+      
+      app-footer footer .text-\[\#70706f\] {
+        color: #70706f !important;
+      }
+      
+      app-footer footer a {
+        color: #1c1d1f !important;
+      }
+      
+      app-footer footer a:hover {
+        color: #6b7280 !important;
+      }
         </style>
         
         <!-- Header -->
@@ -63,12 +89,9 @@
                     <h1 class="font-serif text-[6rem] text-white leading-[1.05] mb-10 reveal-up">
                         Conecta tu negocio con miles de clientes
                     </h1>
-                    <p class="text-white/70 text-2xl max-w-2xl leading-relaxed mb-12 reveal-up">
+                    <p class="text-white/70 text-2xl max-w-2xl leading-relaxed reveal-up">
                         Sistema de domicilios inteligente que optimiza entregas, reduce costos y aumenta tus ventas sin necesidad de infraestructura propia.
                     </p>
-                    <a class="btn-pill-light px-10 py-4 text-base inline-block reveal-up" href="#">
-                        Registrar mi negocio
-                    </a>
                 </div>
             </div>
             
@@ -200,30 +223,6 @@
             </div>
         </section>
 
-        <!-- Stats -->
-        <section class="w-full bg-[#f9f8f6] py-40 px-10">
-            <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-16 text-center">
-                    <div class="reveal-up">
-                        <div class="text-[5rem] text-[#1c1d1f] font-light mb-4 tracking-tighter">100+</div>
-                        <p class="text-[#70706f] text-lg">Negocios afiliados</p>
-                    </div>
-                    <div class="reveal-up">
-                        <div class="text-[5rem] text-[#1c1d1f] font-light mb-4 tracking-tighter">50+</div>
-                        <p class="text-[#70706f] text-lg">Repartidores activos</p>
-                    </div>
-                    <div class="reveal-up">
-                        <div class="text-[5rem] text-[#1c1d1f] font-light mb-4 tracking-tighter">30min</div>
-                        <p class="text-[#70706f] text-lg">Tiempo promedio de entrega</p>
-                    </div>
-                    <div class="reveal-up">
-                        <div class="text-[5rem] text-[#1c1d1f] font-light mb-4 tracking-tighter">98%</div>
-                        <p class="text-[#70706f] text-lg">Satisfacción del cliente</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- CTA -->
         <section class="w-full bg-[#080808] py-40 px-10">
             <div class="max-w-4xl mx-auto text-center">
@@ -238,64 +237,6 @@
                 </a>
             </div>
         </section>
-
-        <!-- Footer -->
-        <footer class="w-full bg-[#080808] py-32 px-10 border-t border-white/5">
-            <div class="max-w-7xl mx-auto">
-                <div class="flex flex-col lg:flex-row justify-between gap-24">
-                    <div class="lg:max-w-sm">
-                        <div class="flex items-center gap-3 mb-12">
-                            <svg class="w-8 h-8 text-white" fill="currentColor" viewbox="0 0 24 24">
-                                <path d="M12 2L13.8 8.8L20.8 10.6L14 12.4L12.2 19.2L10.4 12.4L3.6 10.6L10.6 8.8L12 2Z"></path>
-                            </svg>
-                            <span class="text-3xl font-semibold tracking-tight text-white">Semper Fi</span>
-                        </div>
-                        <p class="text-white/40 text-sm leading-relaxed">
-                            © 2026 Semper Fi. Popayán, Cauca, Colombia.
-                            <br/>
-                            Org.nr: 5595734681
-                        </p>
-                    </div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-16 flex-1">
-                        <div>
-                            <h5 class="text-[10px] font-mono text-white/40 mb-8 uppercase tracking-widest">Producto</h5>
-                            <ul class="space-y-4">
-                                <li><a class="font-serif text-xl text-white/70 hover:text-white transition-colors" href="#">Precios</a></li>
-                                <li><a class="font-serif text-xl text-white/70 hover:text-white transition-colors" href="/domicilios.html">Domicilios</a></li>
-                                <li><a class="font-serif text-xl text-white/70 hover:text-white transition-colors" href="/software.html">Software</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h5 class="text-[10px] font-mono text-white/40 mb-8 uppercase tracking-widest">Compañía</h5>
-                            <ul class="space-y-4">
-                                <li><a class="font-serif text-xl text-white/70 hover:text-white transition-colors" href="/sobre-nosotros.html">Sobre nosotros</a></li>
-                                <li><a class="font-serif text-xl text-white/70 hover:text-white transition-colors" href="#">Noticias</a></li>
-                                <li><a class="font-serif text-xl text-white/70 hover:text-white transition-colors" href="#">Blog</a></li>
-                                <li><a class="font-serif text-xl text-white/70 hover:text-white transition-colors" href="#">Programa de aliados</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h5 class="text-[10px] font-mono text-white/40 mb-8 uppercase tracking-widest">Contacto</h5>
-                            <ul class="space-y-4">
-                                <li><a class="font-serif text-xl text-white/70 hover:text-white transition-colors" href="#">Eventos</a></li>
-                                <li><a class="font-serif text-xl text-white/70 hover:text-white transition-colors" href="#">LinkedIn</a></li>
-                                <li><a class="font-serif text-xl text-white/70 hover:text-white transition-colors" href="mailto:info@semperfi.app">info@semperfi.app</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h5 class="text-[10px] font-mono text-white/40 mb-8 uppercase tracking-widest">Legal</h5>
-                            <ul class="space-y-4">
-                                <li><a class="font-serif text-xl text-white/70 hover:text-white transition-colors" href="#">Términos y condiciones</a></li>
-                                <li><a class="font-serif text-xl text-white/70 hover:text-white transition-colors" href="#">Acuerdo de aliados</a></li>
-                                <li><a class="font-serif text-xl text-white/70 hover:text-white transition-colors" href="#">Política de privacidad</a></li>
-                                <li><a class="font-serif text-xl text-white/70 hover:text-white transition-colors" href="#">DPA</a></li>
-                                <li><a class="font-serif text-xl text-white/70 hover:text-white transition-colors" href="#">Política de cookies</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
     </div>
 </div>
 

@@ -9,7 +9,40 @@ class AppHeader extends HTMLElement {
   }
 
   render() {
+    // Detectar la página actual
+    const currentPath = window.location.pathname;
+    const isHome = currentPath === '/' || currentPath.includes('index.html');
+    const isSobreNosotros = currentPath.includes('sobre-nosotros.html');
+    const isDomicilios = currentPath.includes('domicilios.html');
+    const isSoftware = currentPath.includes('software.html');
+    const isServicios = currentPath.includes('servicios.html');
+
     this.innerHTML = `
+      <style>
+        .nav-link-item.active {
+          color: white !important;
+          font-weight: 600;
+          position: relative;
+        }
+        .nav-link-item.active::after {
+          content: '';
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background: white;
+          border-radius: 2px;
+          box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+        }
+        #main-nav.is-light .nav-link-item.active {
+          color: #2ebaf8 !important;
+        }
+        #main-nav.is-light .nav-link-item.active::after {
+          background: #2ebaf8;
+          box-shadow: 0 0 8px rgba(46, 186, 248, 0.6);
+        }
+      </style>
       <header class="fixed top-4 left-4 right-4 w-auto z-[100] flex items-center justify-between px-10 py-6 backdrop-blur-md bg-white/10 rounded-full border border-white/20 shadow-xl" 
               id="main-nav">
         <div class="flex items-center gap-12">
@@ -24,19 +57,19 @@ class AppHeader extends HTMLElement {
             </span>
           </a>
           <nav class="hidden lg:flex items-center gap-8">
-            <a class="text-sm font-medium text-white/80 hover:text-white nav-link-item transition-colors" 
+            <a class="text-sm font-medium text-white/80 hover:text-white nav-link-item transition-colors ${isSobreNosotros ? 'active' : ''}" 
                href="/sobre-nosotros.html">
               Sobre nosotros
             </a>
-            <a class="text-sm font-medium text-white/80 hover:text-white nav-link-item transition-colors" 
+            <a class="text-sm font-medium text-white/80 hover:text-white nav-link-item transition-colors ${isDomicilios ? 'active' : ''}" 
                href="/domicilios.html">
               Domicilios
             </a>
-            <a class="text-sm font-medium text-white/80 hover:text-white nav-link-item transition-colors" 
+            <a class="text-sm font-medium text-white/80 hover:text-white nav-link-item transition-colors ${isSoftware ? 'active' : ''}" 
                href="/software.html">
               Software
             </a>
-            <a class="text-sm font-medium text-white/80 hover:text-white nav-link-item transition-colors" 
+            <a class="text-sm font-medium text-white/80 hover:text-white nav-link-item transition-colors ${isServicios ? 'active' : ''}" 
                href="/servicios.html">
               Servicios
             </a>
